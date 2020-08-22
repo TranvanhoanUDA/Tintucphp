@@ -1,0 +1,60 @@
+RewriteEngine On
+# Sửa lại RewriteBase nếu bạn cài forum trên thư mục khác root
+RewriteBase /original
+
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^topic-(.+)\.html$ portal.php?mod=topic&topic=$1&%1
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^article-([0-9]+)-(.*)/(.*)$ portal.php?mod=view&aid=$1&page=$3&%1
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^forum-(\w+)-(.*)/(.*)$ forum.php?mod=forumdisplay&fid=$1&page=$3&%1
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^thread-([0-9]+)-(.*)/(.*)$ forum.php?mod=viewthread&tid=$1&page=$3&%1
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^group-([0-9]+)-(.*)/(.*)$ forum.php?mod=group&fid=$1&page=$3&%1
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^member-(.+)$ home.php?mod=space&username=$1&%1
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^blog-([0-9]+)-([0-9]+)-(.*)/$ home.php?mod=space&uid=$1&do=blog&id=$2&%1
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^archiver/(fid|tid)-([0-9]+)\.html$ archiver/index.php?action=$1&value=$2&%1
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^plugin-([a-z]+[a-z0-9_]*)-([a-z0-9_\-]+)\.html$ plugin.php?id=$1:$2&%1
+
+# Nếu bạn muốn tạo trang báo lỗi 404 thì xóa # dòng dưới và thay đổi tên file 404.php theo ý bạn
+#ErrorDocument 404 /404.php
+
+# Bảo vệ thư mục và file với trẻ trâu tò mò
+<FilesMatch "\.(engine|inc|info|install|make|module|profile|test|po|sh|.*sql|theme|tpl(\.php)?|xtmpl)$|^(\..*|Entries.*|Repository|Root|Tag|Template)$">
+  Order allow,deny
+</FilesMatch>
+
+# Không hiện danh sách thư mục và file
+Options -Indexes
+
+# Follow symbolic links in this directory.
+Options +FollowSymLinks
+
+# Để vào trang với 'www.' ở đầu
+# (http://example.com/... sẽ chuyển thành http://www.example.com/...)
+# Xóa # 2 dòng dưới đây
+# RewriteCond %{HTTP_HOST} !^www\. [NC]
+# RewriteRule ^ http://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# Để vào trang ko cần 'www.' ở đầu
+# (http://www.example.com/... sẽ chuyển đến http://example.com/...)
+# Xóa # 2 dòng dưới đây
+# RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+# RewriteRule ^ http://%1%{REQUEST_URI} [L,R=301]
+
+# For Kyehani Seo Pack
+RewriteRule ^(forum|group|home)$ $1.php
+RewriteRule ^(forum|group|home)-(.+)$ $1.php?mod=$2
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^tag-(.*)/$ misc.php?mod=tag&name=$1
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^category-([0-9]+)-(.*)/$ forum.php?gid=$1
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^([A-z]+)-([A-z]+)/$ $1.php?mod=$2
+
+
+

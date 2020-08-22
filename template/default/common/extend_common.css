@@ -1,0 +1,74 @@
+/* Basic Element*/
+.block {
+margin: 5px 0 0;
+}
+.xl1 li {
+height: auto;
+}
+.xl li {
+ margin: 4px 0;
+}
+.frame, .frame-tab {
+border: 0;
+}
+.block .xl1 ul li {
+padding-right: 5px;
+background: transparent;
+}
+/*Advance Element*/
+.listcat > .dxb_bc > .module > ul > li {
+float: left;
+}
+.listcat > .dxb_bc > .module > ul {
+ background:  #F7F7F7;
+    border-top: 1px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    height: 26px;
+    margin: 0;
+    padding: 0;
+}
+.frame-2-1-l > .frame {
+border: 1px solid #CCCCCC;
+}
+.morepost {
+border-left: 1px dotted #CCCCCC;
+}
+.newest_post {
+padding: 0 5px;
+}
+.featured {
+padding: 5px;
+}
+.bestfeatured dt {
+background: #464646;
+padding: 0 8px 8px 8px;
+}
+.bestfeatured dt a {
+color: #FFF;
+font-size: 15px;
+    font-weight: bold;
+}
+.bestfeatured dd.m {
+margin: 8px;
+}
+.bestfeatured dd {
+font-size: 14px;
+margin-top: 5px;
+}
+.older_featured {
+ padding-left: 5px;
+}
+.older_featured dl > dd {
+margin: 0 5px 0 0 !important;
+}
+.older_featured dl > dt {
+padding: 0;
+min-height: 70px;
+}
+
+.lastestpost  dt {
+font-size: 16px;
+}
+
+
