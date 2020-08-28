@@ -1,0 +1,16 @@
+
+
+ 
+CREATE TABLE chitiettintuc(
+   machitiet INT(5) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    cpu VARCHAR(100) NOT NULL ,
+    ram VARCHAR(100) NOT NULL ,
+    videocard VARCHAR(100) NOT NULL ,
+    hdd VARCHAR(100) NOT NULL ,
+    model VARCHAR(100) NOT NULL ,
+    baohanh VARCHAR(100) NOT NULL ,
+    trongluong FLOAT(3,0) NOT NULL ,
+    xuatxu VARCHAR(100) NOT NULL ,
+    matintuc INT(5),
+    FOREIGN KEY (matintuc) REFERENCES tintuc(matintuc)
+);
