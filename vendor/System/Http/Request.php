@@ -50,7 +50,7 @@ class Request
     }
 
      /**
-     * Get Value from _GET by the given key
+     * Nhận giá trị từ _GET bằng khóa đã cho
      *
      * @param string $key
      * @param mixed $default
@@ -71,7 +71,7 @@ class Request
     }
 
      /**
-     * Get Value from _POST by the given key
+     *Nhận giá trị từ _POST bằng khóa đã cho
      *
      * @param string $key
      * @param mixed $default
@@ -91,7 +91,7 @@ class Request
     }
 
      /**
-     * Set Value To _POST For the given key
+     * Đặt giá trị thành _POST cho khóa đã cho
      *
      * @param string $key
      * @param mixed $valuet
@@ -103,7 +103,7 @@ class Request
     }
 
      /**
-     * Get the uploaded file object for the given input
+     * Lấy đối tượng tệp đã tải lên cho đầu vào đã cho
      *
      * @param string $input
      * @return \System\Http\UploadedFile
@@ -122,7 +122,7 @@ class Request
     }
 
      /**
-     * Get Value from _SERVER by the given key
+     * Nhận giá trị từ _SERVER bằng khóa đã cho
      *
      * @param string $key
      * @param mixed $default
@@ -134,7 +134,7 @@ class Request
     }
 
      /**
-     * Get Current Request Method
+     * Get Current yêu cầu Method
      *
      * @return string
      */
@@ -144,7 +144,7 @@ class Request
     }
 
      /**
-     * Get The referer link
+     * Nhận liên kết giới thiệu
      *
      * @return string
      */
@@ -164,7 +164,7 @@ class Request
     }
 
      /**
-     * Get Only relative url (clean url)
+     * Chỉ nhận url tương đối (url sạch)
      *
      * @return string
      */

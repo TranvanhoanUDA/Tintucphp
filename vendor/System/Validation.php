@@ -52,7 +52,7 @@ class Validation
     }
 
      /**
-     * Determine if the given input file exists
+     * Xác định xem tệp đầu vào đã cho có tồn tại hay không
      *
      * @param string $inputName
      * @param string $customErrorMessage
@@ -75,7 +75,7 @@ class Validation
     }
 
      /**
-     * Determine if the given input is an image
+     * Xác định xem đầu vào đã cho có phải là hình ảnh hay không
      *
      * @param string $inputName
      * @param string $customErrorMessage
@@ -102,7 +102,7 @@ class Validation
     }
 
      /**
-     * Determine if the given input is valid email
+     * Xác định xem đầu vào đã cho có phải là email hợp lệ không
      *
      * @param string $inputName
      * @param string $customErrorMessage
@@ -125,7 +125,7 @@ class Validation
     }
 
      /**
-     * Determine if the given input has float value
+     * Xác định xem đầu vào đã cho có giá trị float hay không
      *
      * @param string $inputName
      * @param string $customErrorMessage
@@ -148,7 +148,7 @@ class Validation
     }
 
      /**
-     * Determine if the given input value should be at least the given length
+     * Xác định xem giá trị đầu vào đã cho phải có độ dài ít nhất là bao nhiêu
      *
      * @param string $inputName
      * @param int $length
@@ -172,7 +172,7 @@ class Validation
     }
 
      /**
-     * Determine if the given input value should be at most the given length
+     * Xác định xem giá trị đầu vào đã cho phải có độ dài tối đa là bao nhiêu
      *
      * @param string $inputName
      * @param int $length
@@ -197,7 +197,7 @@ class Validation
     }
 
      /**
-     * Determine if the first input matches the second input
+     * Xác định xem đầu vào đầu tiên có khớp với đầu vào thứ hai hay không
      *
      * @param string $fistInput
      * @param string $secondInput
@@ -218,7 +218,7 @@ class Validation
     }
 
      /**
-     * Determine if the given input is unique in database
+     * Xác định xem đầu vào đã cho là duy nhất trong cơ sở dữ liệu
      *
      * @param string $inputName
      * @param array $databaseData
@@ -263,7 +263,7 @@ class Validation
     }
 
      /**
-     * Add Custom Message
+     * Thêm tin nhắn tùy chỉnh
      *
      * @param string $message
      * @return $this
@@ -276,7 +276,7 @@ class Validation
     }
 
      /**
-     * Determine if there are any invalid inputs
+     * Xác định xem có bất kỳ đầu vào không hợp lệ nào không
      *
      * @return bool
      */
@@ -286,7 +286,7 @@ class Validation
     }
 
      /**
-     * Determine if all inputs are valid
+     * Xác định xem tất cả các đầu vào có hợp lệ không
      *
      * @return bool
      */
@@ -316,7 +316,7 @@ class Validation
     }
 
      /**
-     * Get the value for the given input name
+     * Nhận giá trị cho tên đầu vào đã cho
      *
      * @param string $input
      * @return mixed
@@ -327,7 +327,7 @@ class Validation
     }
 
      /**
-     * Add input error
+     * Thêm lỗi đầu vào
      *
      * @param string $inputName
      * @param string $errorMessage
@@ -339,7 +339,7 @@ class Validation
     }
 
      /**
-     * Determine if the given input has previous errors
+     * Xác định xem đầu vào đã cho có lỗi trước đó không
      *
      * @param string $inputName
      */

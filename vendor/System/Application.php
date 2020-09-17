@@ -35,7 +35,7 @@ class Application
     }
 
      /**
-     * Get Application Instance
+     * Get phiên bản  Application 
      *
      * @param \System\File $file
      * @return \System\Application
@@ -50,7 +50,7 @@ class Application
     }
 
      /**
-     * Run The Application
+     * cahyj Application
      *
      * @return void
      */
@@ -76,7 +76,7 @@ class Application
     }
 
      /**
-     * Register classes in spl auto load register
+     * Đăng ký các lớp trong thanh ghi tải tự động spl
      *
      * @return void
      */
@@ -86,7 +86,7 @@ class Application
     }
 
      /**
-     * Load Class through autoloading
+     * Tải class thông qua tự động tải
      *
      * @param string $class
      * @return void
@@ -96,7 +96,7 @@ class Application
         if (strpos($class, 'App') === 0) {
             $file = $class . '.php';
         } else {
-            // get the class from vendor
+            // get vendor
             $file = 'vendor/' . $class . '.php';
         }
 
@@ -106,7 +106,7 @@ class Application
     }
 
      /**
-     * Load Helpers File
+     * Load Helpers
      *
      * @return void
      */
@@ -116,7 +116,7 @@ class Application
     }
 
      /**
-     * Get Shared Value
+     * Get giá trị được chia sẻ
      *
      * @param string $key
      * @return mixed
@@ -135,7 +135,7 @@ class Application
     }
 
      /**
-     * Determine if the given key is shared through Application
+     * Xác định xem khóa đã cho có được chia sẻ qua Application
      *
      * @param string $key
      * @return bool
@@ -146,7 +146,7 @@ class Application
     }
 
     /**
-    * Share the given key|value Through Application
+    * Chia sẻ khóa đã cho | giá trị Thông qua Application
     *
     * @param string $key
     * @param mixed $value
@@ -162,7 +162,7 @@ class Application
    }
 
      /**
-     * Determine if the given key is an alias to core class
+     * Xác định xem key đã cho có phải là alias của lớp core hay không
      *
      * @param string $alias
      * @return bool
@@ -175,7 +175,7 @@ class Application
     }
 
      /**
-     * Create new object for the core class based on the given alias
+     * Tạo đối tượng mới cho lớp core dựa trên alias
      *
      * @param string $alias
      * @return object
@@ -190,7 +190,7 @@ class Application
     }
 
     /**
-    * Get All Core Classes with its aliases
+    * tất cả các lớp cốt core với aliases
     *
     * @return array
     */
@@ -213,7 +213,7 @@ class Application
    }
 
     /**
-    * Get shared value dynamically
+    * Nhận giá trị chia sẻ động
     *
     * @param string $key
     * @return mixed

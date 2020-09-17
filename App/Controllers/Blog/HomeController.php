@@ -7,7 +7,7 @@ use System\Controller;
 class HomeController extends Controller
 {
      /**
-     * Display Home Page
+     * trang chủ
      *
      * @return mixed
      */
@@ -23,9 +23,9 @@ class HomeController extends Controller
             return $postController->box($post);
         };
 
-        // i will use getOutput() method just to display errors
-        // as i'm using php 7 which is throwing all errors as exceptions
-        // which won't be thrown through the __toString() method
+        // sử dụng phương thức getOutput () chỉ để hiển thị lỗi
+        // vì  đang sử dụng php 7 đang ném tất cả các lỗi làm ngoại lệ
+        // sẽ không được ném qua phương thức __toString ()
         $view = $this->view->render('blog/home', $data);
 
         return $this->blogLayout->render($view);

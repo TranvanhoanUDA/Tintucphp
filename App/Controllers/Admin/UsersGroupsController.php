@@ -7,7 +7,7 @@ use System\Controller;
 class UsersGroupsController extends Controller
 {
     /**
-    * Display Users Groups List
+    * hiển thị danh sách
     *
     * @return mixed
     */
@@ -25,7 +25,7 @@ class UsersGroupsController extends Controller
     }
 
     /**
-    * Open Users Groups Form
+    * mở form
     *
     * @return string
     */
@@ -35,7 +35,7 @@ class UsersGroupsController extends Controller
     }
 
     /**
-    * Submit for creating new users group
+    * Submit để tạo
     *
     * @return string | json
     */
@@ -44,14 +44,12 @@ class UsersGroupsController extends Controller
         $json = [];
 
         if ($this->isValid()) {
-            // it means there are no errors in form validation
             $this->load->model('UsersGroups')->create();
 
             $json['success'] = 'Users Group Has Been Created Successfully';
 
             $json['redirectTo'] = $this->url->link('/admin/users-groups');
         } else {
-            // it means there are errors in form validation
             $json['errors'] = $this->validator->flattenMessages();
         }
 
@@ -59,7 +57,7 @@ class UsersGroupsController extends Controller
     }
 
      /**
-     * Display Edit Form
+     * sửa
      *
      * @param int $id
      * @return string
@@ -78,21 +76,21 @@ class UsersGroupsController extends Controller
     }
 
      /**
-     * Display Form
+     * hiện form
      *
      * @param \stdClass $usersGroup
      */
     private function form($usersGroup = null)
     {
         if ($usersGroup) {
-            // editing form
+            // thực hiện sửa
             $data['target'] = 'edit-users-group-' . $usersGroup->id;
 
             $data['action'] = $this->url->link('/admin/users-groups/save/' . $usersGroup->id);
 
             $data['heading'] = 'Edit ' . $usersGroup->name;
         } else {
-            // adding form
+            // thực hiện thêm
             $data['target'] = 'add-users-group-form';
 
             $data['action'] = $this->url->link('/admin/users-groups/submit');
@@ -112,7 +110,7 @@ class UsersGroupsController extends Controller
     }
 
      /**
-     * Get All Permission Pages
+     * hiện tất cả các danh sách quyền
      *
      * @return array
      */
@@ -130,7 +128,7 @@ class UsersGroupsController extends Controller
      }
 
     /**
-    * Submit for creating new users group
+    * Submit để tạo nhóm người dùng mới
     *
     * @return string | json
     */
@@ -139,14 +137,12 @@ class UsersGroupsController extends Controller
         $json = [];
 
         if ($this->isValid()) {
-            // it means there are no errors in form validation
             $this->load->model('UsersGroups')->update($id);
 
             $json['success'] = 'Users Groups Has Been Updated Successfully';
 
             $json['redirectTo'] = $this->url->link('/admin/users-groups');
         } else {
-            // it means there are errors in form validation
             $json['errors'] = $this->validator->flattenMessages();
         }
 
@@ -154,7 +150,7 @@ class UsersGroupsController extends Controller
     }
 
      /**
-     * Delete Record
+     * xóa
      *
      * @param int $id
      * @return mixed
@@ -175,7 +171,7 @@ class UsersGroupsController extends Controller
     }
 
      /**
-     * Validate the form
+     * xác thực
      *
      * @return bool
      */

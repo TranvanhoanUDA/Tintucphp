@@ -6,11 +6,6 @@ use System\Controller;
 
 class RegisterController extends Controller
 {
-     /**
-     * Display Registration Page
-     *
-     * @return mixed
-     */
     public function index() 
     {
          $loginModel = $this->load->model('Login');
@@ -22,14 +17,14 @@ class RegisterController extends Controller
 
         $view = $this->view->render('blog/users/register');
 
-        // disable sidebar
+        // ẩn sidebar
         $this->blogLayout->disable('sidebar');
 
         return $this->blogLayout->render($view);
     }
 
     /**
-    * Submit for creating new user
+    * Submit để tạo user
     *
     * @return string | json
     */
@@ -39,18 +34,14 @@ class RegisterController extends Controller
 
         if ($this->isValid()) {
 
-            // set the users group id for the registered user
-            // to be the id of the "users" group
+            
+            // đặt id nhóm người dùng cho người dùng đã đăng ký
+            // là id của nhóm "user"
             $this->request->setPost('users_group_id', 2);
-
-            // it means there are no errors in form validation
             $this->load->model('Users')->create();
-
             $json['success'] = 'User Has Been Created Successfully';
-
             $json['redirectTo'] = $this->url->link('/');
         } else {
-            // it means there are errors in form validation
             $json['errors'] = $this->validator->flattenMessages();
         }
 
@@ -58,7 +49,7 @@ class RegisterController extends Controller
     }
 
      /**
-     * Validate the form
+     * xác thực
      *
      * @param int $id
      * @return bool

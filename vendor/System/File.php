@@ -29,7 +29,7 @@ class File
     }
 
      /**
-     * Determine wether the given file path exists
+     * Xác định đường dẫn tệp đã cho tồn tại
      *
      * @param string $file
      * @return bool
@@ -40,7 +40,7 @@ class File
     }
 
      /**
-     * Require The given file
+     * Require tệp đã cho
      *
      * @param string $file
      * @return mixed
@@ -51,7 +51,7 @@ class File
     }
 
      /**
-     * Generate full path to the given path in vendor folder
+     * Tạo đường dẫn đầy đủ đến đường dẫn đã cho trong thư mục
      *
      * @param string $path
      * @return string
@@ -62,7 +62,7 @@ class File
     }
 
      /**
-     * Generate full path to the given path in public folder
+     *tạo đường dẫn đầy đủ đến đường dẫn đã cho trong thư mục chung
      *
      * @param string $path
      * @return string
@@ -73,7 +73,7 @@ class File
     }
 
    /**
-   * Generate full path to the given path
+   * Tạo đường dẫn đầy đủ đến đường dẫn đã cho
    *
    * @param string $path
    * @return string

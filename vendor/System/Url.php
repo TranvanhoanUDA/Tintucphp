@@ -22,7 +22,7 @@ class Url
     }
 
      /**
-     * Generate full link for the given path
+     * Tạo liên kết đầy đủ cho đường dẫn đã cho
      *
      * @param string $path
      * @return string
@@ -33,7 +33,7 @@ class Url
     }
 
      /**
-     * Redirect to the given path
+     * Chuyển hướng đến đường dẫn đã cho
      *
      * @param string $path
      * @return void

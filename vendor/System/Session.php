@@ -36,7 +36,7 @@ class Session
     }
 
      /**
-     * Set New Value to Session
+     * Đặt giá trị mới  Session
      *
      * @param string $key
      * @param mixed $value
@@ -48,7 +48,7 @@ class Session
     }
 
      /**
-     * Get Value from session by the given key
+     * Nhận giá trị từ Session bằng khóa đã cho
      *
      * @param string $key
      * @param mixed $default
@@ -60,7 +60,7 @@ class Session
     }
 
      /**
-     * Determine if the session has the given key
+     * Xác định xem Session có khóa đã cho hay không
      *
      * @param string $key
      * @return bool
@@ -71,7 +71,7 @@ class Session
     }
 
      /**
-     * Remove the given key from session
+     * Xóa khóa đã cho khỏi session
      *
      * @param string $key
      * @return void
@@ -82,7 +82,7 @@ class Session
     }
 
      /**
-     * Get value from session by the given key then remove it
+     * Nhận giá trị từ session bằng khóa đã cho rồi xóa nó
      *
      * @param string $key
      * @return mixed
@@ -97,7 +97,7 @@ class Session
     }
 
      /**
-     * Get all session data
+     * Nhận tất cả dữ liệu session
      *
      * @return array
      */
@@ -107,7 +107,7 @@ class Session
     }
 
      /**
-     * Destroy Session
+     * Hủy session
      *
      * @return void
      */

@@ -7,14 +7,14 @@ use System\Model;
 class CategoriesModel extends Model
 {
      /**
-     * Table name
+     * tên bảng
      *
      * @var string
      */
     protected $table = 'categories';
 
      /**
-     * Create New Category Record
+     * tạo danh mục
      *
      * @return void
      */
@@ -26,7 +26,7 @@ class CategoriesModel extends Model
     }
 
      /**
-     * Update Category Record By Id
+     * Cập nhật bản ghi danh mục theo Id
      *
      * @param int $id
      * @return void
@@ -40,19 +40,20 @@ class CategoriesModel extends Model
     }
 
      /**
-     * Get enabled categories with total number of posts for each category
+     * các danh mục đã bật với tổng số bài đăng cho từng danh mục
      *
      * @return array
      */
     public function getEnabledCategoriesWithNumberOfTotalPosts()
     {
-        // share the categories in the application to not call it twice in same request
+        //chia sẻ các danh mục trong ứng dụng để không gọi nó hai lần trong cùng một yêu cầu
 
         if (! $this->app->isSharing('enabled-categories')) {
-            // first we will get the enabled categories
-            // and we will add another condition that total number of posts
-            // for each category
-            // should be more than zero
+
+            // trước tiên sẽ lấy các danh mục đã bật
+            // và sẽ thêm một điều kiện khác là tổng số bài đăng
+            // cho từng danh mục
+            // phải nhiều hơn 0
             $categories = $this->select('c.id', 'c.name')
                                ->select('(SELECT COUNT(p.id) FROM posts p WHERE p.status="enabled" AND p.category_id=c.id) AS total_posts')
                                ->from('categories c')
@@ -67,7 +68,7 @@ class CategoriesModel extends Model
     }
 
      /**
-     * Get Category With Posts
+     * danh mục với các bài đăng
      *
      * @param int $id
      * @return array
@@ -78,12 +79,12 @@ class CategoriesModel extends Model
 
         if (! $category) return [];
 
-        // We Will get the current page
+        // lấy trang hiện tại
         $currentPage = $this->pagination->page();
-        // We Will get the items Per Page
+        // nhận các mục trên mỗi trang
         $limit = $this->pagination->itemsPerPage();
 
-        // Set our offset
+        // Đặt phần bù trừ
         $offset = $limit * ($currentPage - 1);
 
         $category->posts = $this->select('p.*', 'u.first_name', 'u.last_name')
@@ -95,7 +96,7 @@ class CategoriesModel extends Model
                                 ->limit($limit, $offset)
                                 ->fetchAll();
 
-        // Get total posts for pagination
+        // Lấy tổng số bài viết để phân trang
         $totalPosts = $this->select('COUNT(id) AS `total`')
                                 ->from('posts')
                                 ->where('category_id=? AND status=?', $id, 'enabled')

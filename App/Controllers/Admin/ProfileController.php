@@ -7,7 +7,7 @@ use System\Controller;
 class ProfileController extends Controller
 {
     /**
-    * Submit for creating new user
+    * Submit tạo user
     *
     * @return string | json
     */
@@ -15,20 +15,18 @@ class ProfileController extends Controller
     {
         $json = [];
 
-        // We Will get the current user object from the login model
-        // to get his id
+        // lấy đối tượng người dùng hiện tại từ mô hình đăng nhập
+        // lấy id 
 
         $user = $this->load->model('Login')->user();
 
         if ($this->isValid($user->id)) {
-            // it means there are no errors in form validation
             $this->load->model('Users')->update($user->id, $user->users_group_id);
 
             $json['success'] = 'User Has Been Updated Successfully';
 
             $json['redirectTo'] = $this->request->referer() ?: $this->url->link('/admin');
         } else {
-            // it means there are errors in form validation
             $json['errors'] = $this->validator->flattenMessages();
         }
 
@@ -36,7 +34,7 @@ class ProfileController extends Controller
     }
 
      /**
-     * Validate the form
+     * Xác thực
      *
      * @param int $id
      * @return bool

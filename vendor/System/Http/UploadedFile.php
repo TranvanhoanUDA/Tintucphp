@@ -14,63 +14,63 @@ class UploadedFile
     private $app;
 
      /**
-     * The uploaded file
+     * Tệp đã tải lên
      *
      * @var array
      */
     private $file = [];
 
      /**
-     * The uploaded file name
+     * Tên Tệp đã tải lên
      *
      * @var string
      */
     private $fileName;
 
      /**
-     * The uploaded file name without its extension
+     * Tên tệp đã tải lên không có phần extension
      *
      * @var string
      */
     private $nameOnly;
 
      /**
-     * The uploaded file extension
+     * Tệp đã tải lên extension
      *
      * @var string
      */
     private $extension;
 
      /**
-     * The uploaded file mime type
+     * loại mime tệp đã tải lên
      *
      * @var string
      */
     private $mimeType;
 
      /**
-     * The uploaded temp file path
+     * Đường dẫn tệp tạm thời đã tải lên
      *
      * @var string
      */
     private $tempFile;
 
      /**
-     * The uploaded file size in bytes
+     * Kích thước tệp đã tải lên tính bằng byte
      *
      * @var int
      */
     private $size;
 
      /**
-     * The uploaded file error
+     * uploaded file error
      *
      * @var int
      */
     private $error;
 
      /**
-     * The allowed image extensions
+     * ghép Phần mở rộng hình ảnh 
      *
      * @var array
      */
@@ -87,7 +87,7 @@ class UploadedFile
     }
 
      /**
-     * Start collecting uploaded file data
+     * Bắt đầu thu thập dữ liệu tệp đã tải lên
      *
      * @param string $input
      * @return void
@@ -124,7 +124,7 @@ class UploadedFile
     }
 
      /**
-     * Determine if the file is uploaded
+     * Xác định xem tệp có được tải lên không
      *
      * @return bool
      */
@@ -134,7 +134,7 @@ class UploadedFile
     }
 
      /**
-     * Get File Name
+     * Get tên File 
      *
      * @return string
      */
@@ -144,8 +144,7 @@ class UploadedFile
     }
 
      /**
-     * Get File Name only without extension
-     *
+     * Chỉ nhận Tên tệp mà không có phần mở rộng     *
      * @return string
      */
     public function getNameOnly()
@@ -154,7 +153,7 @@ class UploadedFile
     }
 
      /**
-     * Get File extension
+     * Get phần mở rộng tệp
      *
      * @return string
      */
@@ -174,7 +173,7 @@ class UploadedFile
     }
 
      /**
-     * Determine whether the uploaded file is image
+     * Xác định xem tệp tải lên có phải là hình ảnh hay không
      *
      * @return bool
      */
@@ -185,7 +184,7 @@ class UploadedFile
     }
 
      /**
-     * Move the uploaded file to the given destination "target"
+     * Di chuyển tệp đã tải lên đến "target" đích nhất định
      *
      * @param string $target
      * @param string $newFileName

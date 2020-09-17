@@ -33,7 +33,7 @@ class Route
     private $notFound;
 
      /**
-     * Calls Container
+     * gọi Container
      *
      * @var array
      */
@@ -91,7 +91,7 @@ class Route
     }
 
      /**
-     * Call the given callback before calling the main controller
+     * 
      *
      * @var callable $callable
      * @return $this
@@ -104,9 +104,8 @@ class Route
     }
 
      /**
-     * Determine if there are any callbacks that will be called before
-     * calling the main controller
-     *
+     * Xác định xem có bất kỳ lệnh gọi lại nào sẽ được gọi trước đó không
+     * gọi controller
      * @return bool
      */
     public function hasCallsFirst()
@@ -115,8 +114,8 @@ class Route
     }
 
      /**
-     * Call All callbacks that will be called before
-     * calling the main controller
+     * Gọi Tất cả các cuộc gọi lại sẽ được gọi trước đó
+     * gọi controller
      *
      * @return bool
      */
@@ -128,7 +127,7 @@ class Route
     }
 
     /**
-    * Get Proper Route
+    * nhận routes thích hợp
     *
     * @return array
     */
@@ -151,7 +150,7 @@ class Route
    }
 
     /**
-    * Get Current Route Url
+    * Nhận Url Rou hiện tại
     *
     * @return string
     */
@@ -161,7 +160,7 @@ class Route
    }
 
     /**
-    * Determine if the given pattern matches the current request url
+    * Xác định xem mẫu đã cho có khớp với url yêu cầu hiện tại hay không
     *
     * @param string $pattern
     * @return bool
@@ -172,8 +171,8 @@ class Route
    }
 
    /**
-   * Determine if the current request method equals
-   * the given route method
+   * Xác định xem phương thức yêu cầu hiện tại có bằng
+   * phương pháp route đã cho
    *
    * @param string $routeMethod
    * @return bool
@@ -184,8 +183,8 @@ class Route
    }
 
     /**
-    * Get Arguments from the current request url
-    * based on the given pattern
+    * Nhận Argents từ url yêu cầu hiện tại
+    * dựa trên mẫu đã cho
     *
     * @param string $pattern
     * @return array
@@ -200,7 +199,7 @@ class Route
    }
 
      /**
-     * Generate a regex pattern for the given url
+     * Tạo mẫu regex cho url đã cho
      *
      * @param string $url
      * @return string
@@ -211,10 +210,10 @@ class Route
 
         // :text ([a-zA-Z0-9-]+)
         // :id (\d+)
-        // my name is hasan
-        // my
-        // you
-        // str_replace('my', 'you', 'my name is hasan');
+        // tôi tên là hoàn
+        // tôi
+        // bạn
+        // str_replace('tôi', 'bạn ', 'tôi tên là hoàn');
 
         // [a,b]
         // [c,d]
@@ -230,7 +229,7 @@ class Route
     }
 
      /**
-     * Get The Proper Action
+     * Nhận Action thích hợp
      *
      * @param string $action
      * @return string

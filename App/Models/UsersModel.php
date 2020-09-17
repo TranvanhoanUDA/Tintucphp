@@ -7,7 +7,7 @@ use System\Model;
 class UsersModel extends Model
 {
      /**
-     * Table name
+     * tên bagr
      *
      * @var string
      */
@@ -26,7 +26,7 @@ class UsersModel extends Model
     }
 
      /**
-     * Create New User
+     * tạo mới
      *
      * @return void
      */
@@ -53,7 +53,7 @@ class UsersModel extends Model
     }
 
      /**
-     * Upload User Image
+     * up date
      *
      * @return string
      */
@@ -69,7 +69,7 @@ class UsersModel extends Model
      }
 
      /**
-     * Update Users Record By Id
+     * Update by id
      *
      * @param int $id
      * @param int $usersGroupId

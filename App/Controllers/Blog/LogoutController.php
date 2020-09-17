@@ -7,7 +7,6 @@ use System\Controller;
 class LogoutController extends Controller
 {
     /**
-    * Log the user out
     *
     * @return mixed
     */

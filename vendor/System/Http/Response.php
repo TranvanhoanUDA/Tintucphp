@@ -38,7 +38,7 @@ class Response
     }
 
      /**
-     * Set the response output content
+     * Gửi phản hồi output content
      *
      * @param string $content
      * @return void
@@ -49,7 +49,7 @@ class Response
     }
 
      /**
-     * Set the response Headers
+     * Gửi phản hồi Headers
      *
      * @param string $header
      * @param mixed value
@@ -61,7 +61,7 @@ class Response
     }
 
      /**
-     * Send the response headers and content
+     * Gửi phản hồi headers and content
      *
      * @return void
      */
@@ -73,7 +73,7 @@ class Response
     }
 
      /**
-     * Send the response headers
+     * Gửi phản hồi headers
      *
      * @return void
      */
@@ -85,7 +85,7 @@ class Response
     }
 
      /**
-     * Send the response output
+     * Gửi phản hồi output
      *
      * @return void
      */

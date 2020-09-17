@@ -7,7 +7,7 @@ use System\Controller;
 class SettingsController extends Controller
 {
     /**
-    * Display Settings Form
+    * hiển thị  Settings
     *
     * @return mixed
     */
@@ -35,7 +35,7 @@ class SettingsController extends Controller
     }
 
     /**
-    * Submit for creating new ad
+    * Submit để tạo
     *
     * @return string | json
     */
@@ -56,7 +56,7 @@ class SettingsController extends Controller
     }
 
      /**
-     * Validate the form
+     * xác thực
      *
      * @param int $id
      * @return bool

@@ -127,7 +127,7 @@ class Database
     }
 
      /**
-     * Determine if there is any connection to database
+     * xác dịnh có đường dẫn csdl k
      *
      * @return bool
      */
@@ -137,7 +137,7 @@ class Database
      }
 
      /**
-     * Connect To Database
+     * Connect Database
      *
      * @return void
      */
@@ -161,7 +161,7 @@ class Database
      }
 
      /**
-     * Get Database Connection Object PDO Object
+     * Nhận đối tượng kết nối cơ sở dữ liệu Đối tượng PDO
      *
      * @return \PDO
      */
@@ -233,7 +233,7 @@ class Database
 
       /**
       * Fetch Table
-      * This will return only one record
+      *  Điều này sẽ chỉ trả về một bản ghi
       *
       * @param string $table
       * @return \stdClass | null
@@ -279,7 +279,7 @@ class Database
      }
 
       /**
-      * Get total rows from last fetch all statement
+      *Nhận tổng số hàng từ lần last fetch cuối cùng tất cả câu lệnh
       *
       * @return int
       */
@@ -289,7 +289,7 @@ class Database
      }
 
       /**
-      * Prepare Select Statement
+      * Chuẩn bị Chọn
       *
       * @return string
       */
@@ -338,7 +338,7 @@ class Database
      }
 
       /**
-      * Set the table name
+      * Set  table name
       *
       * @param string $table
       * @return $this
@@ -351,7 +351,7 @@ class Database
      }
 
       /**
-      * Set the table name
+      * Settable name
       *
       * @param string $table
       * @return $this

@@ -7,14 +7,14 @@ use System\Model;
 class AdsModel extends Model
 {
      /**
-     * Table name
+     * tên bảng
      *
      * @var string
      */
     protected $table = 'ads';
 
      /**
-     * Get Enabled Ads for the current page
+     * xác nhận Ads có hiển thị k
      *
      * @return array
      */
@@ -28,7 +28,7 @@ class AdsModel extends Model
      }
 
      /**
-     * Create New Ad
+     * tạo mới
      *
      * @return void
      */
@@ -51,7 +51,7 @@ class AdsModel extends Model
     }
 
      /**
-     * Upload Ad Image
+     * cập nhật
      *
      * @return string
      */
@@ -67,7 +67,7 @@ class AdsModel extends Model
      }
 
      /**
-     * Update Ads Record By Id
+     * cập nhật bằng ID
      *
      * @param int $id
      * @return void

@@ -7,7 +7,7 @@ use System\Controller;
 class UsersController extends Controller
 {
     /**
-    * Display Users  List
+    * hiện danh sách Users
     *
     * @return mixed
     */
@@ -25,7 +25,7 @@ class UsersController extends Controller
     }
 
     /**
-    * Open Users  Form
+    * mở form user
     *
     * @return string
     */
@@ -35,7 +35,7 @@ class UsersController extends Controller
     }
 
     /**
-    * Submit for creating new user
+    * Submit tạo mới user
     *
     * @return string | json
     */
@@ -44,14 +44,12 @@ class UsersController extends Controller
         $json = [];
 
         if ($this->isValid()) {
-            // it means there are no errors in form validation
             $this->load->model('Users')->create();
 
             $json['success'] = 'User Has Been Created Successfully';
 
             $json['redirectTo'] = $this->url->link('/admin/users');
         } else {
-            // it means there are errors in form validation
             $json['errors'] = $this->validator->flattenMessages();
         }
 
@@ -59,7 +57,7 @@ class UsersController extends Controller
     }
 
      /**
-     * Display Edit Form
+     *sửa
      *
      * @param int $id
      * @return string
@@ -78,21 +76,21 @@ class UsersController extends Controller
     }
 
      /**
-     * Display Form
+     * hiện form
      *
      * @param \stdClass $user
      */
     private function form($user = null)
     {
         if ($user) {
-            // editing form
+            // thực hiện sửa
             $data['target'] = 'edit-user-' . $user->id;
 
             $data['action'] = $this->url->link('/admin/users/save/' . $user->id);
 
             $data['heading'] = 'Edit ' . $user->first_name . ' ' . $user->last_name;
         } else {
-            // adding form
+            // thêm
             $data['target'] = 'add-user-form';
 
             $data['action'] = $this->url->link('/admin/users/submit');
@@ -117,7 +115,7 @@ class UsersController extends Controller
         }
 
         if (! empty($user['image'])) {
-            // default path to upload user image : public/images
+            //đường dẫn mặc định để tải lên hình ảnh của người dùng: public / images
             $data['image'] = $this->url->link('public/images/' . $user['image']);
         }
 
@@ -127,7 +125,7 @@ class UsersController extends Controller
     }
 
     /**
-    * Submit for creating new user
+    * Submit để tạo mới 
     *
     * @return string | json
     */
@@ -136,14 +134,12 @@ class UsersController extends Controller
         $json = [];
 
         if ($this->isValid($id)) {
-            // it means there are no errors in form validation
             $this->load->model('Users')->update($id);
 
             $json['success'] = 'Users  Has Been Updated Successfully';
 
             $json['redirectTo'] = $this->url->link('/admin/users');
         } else {
-            // it means there are errors in form validation
             $json['errors'] = $this->validator->flattenMessages();
         }
 
@@ -151,7 +147,7 @@ class UsersController extends Controller
     }
 
      /**
-     * Delete Record
+     * xóa 
      *
      * @param int $id
      * @return mixed
@@ -172,7 +168,7 @@ class UsersController extends Controller
     }
 
      /**
-     * Validate the form
+     * xác thực
      *
      * @param int $id
      * @return bool
@@ -185,10 +181,11 @@ class UsersController extends Controller
         $this->validator->unique('email', ['users', 'email', 'id', $id]);
 
         if (is_null($id)) {
-            // if the id is null
-            // then this method is called to create new user
-            // so we will validate the password as it should be required
-            // and the image as well
+            // nếu id là null
+            // thì phương thức này được gọi để tạo người dùng mới
+            // xác thực mật khẩu và cả hình ảnh 
+
+
             $this->validator->required('password')->minLen('password', 8)->match('password', 'confirm_password', 'Confirm Password Should Match Password');
             $this->validator->requiredFile('image')->image('image');
         } else {

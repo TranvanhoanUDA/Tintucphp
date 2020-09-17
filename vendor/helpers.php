@@ -3,13 +3,7 @@
 use System\Application;
 
 
-if (! function_exists('pre')) {
-     /**
-     * Visualize the given variable in browser
-     *
-     * @param mixed $var
-     * @return void
-     */
+
     function pre($var)
     {
         echo '<pre>';
@@ -20,7 +14,7 @@ if (! function_exists('pre')) {
 
 if (! function_exists('pred')) {
      /**
-     * Visualize the given variable in browser and exit the application
+     * Hình dung biến đã cho trong trình duyệt và thoát khỏi ứng dụng
      *
      * @param mixed $var
      * @return void
@@ -34,8 +28,8 @@ if (! function_exists('pred')) {
 
 if (! function_exists('array_get')) {
      /**
-     * Get the value from the given array for the given key if found
-     * otherwise get the default value
+     * Nhận giá trị từ mảng đã cho cho khóa đã cho nếu tìm thấy
+     * nếu không thì lấy giá trị mặc định
      *
      * @param array $array
      * @param string|int $key
@@ -49,7 +43,7 @@ if (! function_exists('array_get')) {
 
 if (! function_exists('_e')) {
      /**
-     * Escape the given value
+     * Thoát khỏi giá trị đã cho
      *
      * @param string $value
      * @return string
@@ -62,7 +56,7 @@ if (! function_exists('_e')) {
 
 if (! function_exists('assets')) {
      /**
-     * Generate full path for the given path in public directory
+     * Tạo đường dẫn đầy đủ cho đường dẫn đã cho trong thư mục công khai
      *
      * @param string $path
      * @return string
@@ -77,7 +71,7 @@ if (! function_exists('assets')) {
 
 if (! function_exists('url')) {
      /**
-     * Generate full path for the given path
+     * Tạo đường dẫn đầy đủ cho đường dẫn đã cho
      *
      * @param string $path
      * @return string
@@ -92,7 +86,7 @@ if (! function_exists('url')) {
 
 if (! function_exists('read_more')) {
     /**
-    * Cut the given string and get the given number of words from it
+    * Cắt chuỗi đã cho và lấy số từ đã cho từ nó
     *
     * @param string $string
     * @param int $number_of_words
@@ -100,16 +94,8 @@ if (! function_exists('read_more')) {
     */
     function read_more($string, $number_of_words)
     {
-        // remove any empty values in the exploded array
+        // loại bỏ bất kỳ giá trị trống trong mảng
         $words_of_string = array_filter(explode(' ' , $string));
-
-        // if the total words of the given string is less than or equal to
-        // the given number of words parameter
-        // then we will just return the whole string
-        // assume $sting has 10 words
-        // and the $number_of_words = 20
-        // number of words is bigger than the number of given string words
-        // in this case we will just return the string
         if (count($words_of_string) <= $number_of_words) {
             return $string;
         }
@@ -119,13 +105,6 @@ if (! function_exists('read_more')) {
 }
 
 if (! function_exists('seo')) {
-     /**
-     * Remove any unwanted characters from the given string
-     * and replace it with -
-     *
-     * @param string $string
-     * @return string
-     */
 
     function seo($string)
     {
@@ -169,23 +148,23 @@ if (! function_exists('seo')) {
         $string = preg_replace($search, $replace, $string);
         $string = preg_replace('/(-)+/', '-', $string);
         $string = strtolower($string);
-        // remove any white spaces from the beginning and
-        //the end of the given string
+        // loại bỏ bất kỳ khoảng trắng nào từ đầu và
+        // phần cuối của chuỗi đã cho
         $string = trim($string);
 
 
 
-        // replace any non English or numeric characters and dashes with white space
+        // thay thế mọi ký tự không phải tiếng Anh hoặc số và dấu gạch ngang bằng khoảng trắng
         $string = preg_replace('#[^\w]#', ' ' , $string);
-
-        // replace any multi white spaces with just one white space
+        // thay thế nhiều khoảng trắng chỉ bằng một khoảng trắng
         $string = preg_replace('#[\s]+#', ' ', $string);
 
-        // replace white spaces with dash
+        // thay thế khoảng trắng bằng dấu gạch ngang
         $string = str_replace(' ', '-', $string);
 
-        // make all letters in small case letters
-        // and trim any dashes
+
+        // tạo tất cả các chữ cái bằng chữ cái in hoa nhỏ
+        // và cắt bất kỳ dấu gạch ngang
         return trim(strtolower($string), '-');
     }
 }

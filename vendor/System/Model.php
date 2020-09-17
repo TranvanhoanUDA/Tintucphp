@@ -12,7 +12,7 @@ abstract class Model
     protected $app;
 
      /**
-     * Table name
+     * tên bảng
      *
      * @var string
      */
@@ -29,7 +29,7 @@ abstract class Model
     }
 
      /**
-     * Call shared application objects dynamically
+     * Gọi động các đối tượng được chia sẻ
      *
      * @param string $key
      * @return mixed
@@ -60,7 +60,7 @@ abstract class Model
     }
 
      /**
-     * Determine if the given value of the key exists in table
+     * Xác định xem giá trị đã cho của khóa có tồn tại trong bảng hay không
      *
      * @param mixed $value
      * @param string $key
@@ -83,7 +83,7 @@ abstract class Model
     }
 
      /**
-     * Call Database methods dynamically
+     *Gọi các phương thức Cơ sở dữ liệu động
      *
      * @param string $method
      * @param array $args

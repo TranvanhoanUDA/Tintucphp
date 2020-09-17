@@ -7,7 +7,7 @@ use System\Controller;
 class PostController extends Controller
 {
      /**
-     * Display Post Page
+     * hiển thị Post Page
      *
      * @param string name
      * @param int $id
@@ -31,7 +31,7 @@ class PostController extends Controller
     }
 
      /**
-     * Add New Comment to the given post
+     * thêm cmt
      *
      * @param string $title
      * @param int $id
@@ -39,8 +39,8 @@ class PostController extends Controller
      */
     public function addComment($title, $id)
     {
-        // first we will check if there is no comment or the post does not exist
-        // then we will redirect him to not found page
+        // đầu tiên kiểm tra xem không có bình luận nào hoặc bài viết không tồn tại
+        // sau đó chuyển hướng ng dùng đến trang not found page
         $comment = $this->request->post('comment');
 
         $postsModel = $this->load->model('Posts');
@@ -60,7 +60,7 @@ class PostController extends Controller
     }
 
      /**
-     * Load the post box view for the given post
+     * load vies
      *
      * @param \stdClass $post
      * @return string

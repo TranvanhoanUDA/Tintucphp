@@ -19,21 +19,21 @@ class Pagination
     private $totalItems;
 
      /**
-     * Items Per Page
+     * Các mục trên mỗi trang
      *
      * @var int
      */
     private $itemsPerPage = 10;
 
      /**
-     * Last Page Number => Total Pages
+     * Số trang cuối cùng => Tổng số trang
      *
      * @var int
      */
     private $lastPage;
 
      /**
-     * Current Page Number
+     * Số trang hiện tại
      *
      * @var int
      */
@@ -52,7 +52,7 @@ class Pagination
     }
 
      /**
-     * Set Current Page
+     * Đặt trang hiện tại
      *
      * @return void
      */
@@ -63,8 +63,8 @@ class Pagination
         // ?page=3
         $page = $this->app->request->get('page');
 
-        // just to make sure that the passed query string parameter page
-        // must be number and should be more or equal than 1
+        // trang tham số chuỗi truy vấn đã chuyển
+        // phải là số và phải lớn hơn hoặc bằng 1
         if (! is_numeric($page) OR $page < 1) {
             $page = 1;
         }
@@ -73,7 +73,7 @@ class Pagination
     }
 
      /**
-     * Get Current Page Number
+     * Get số trang hiện tại
      *
      * @return int
      */
@@ -83,7 +83,7 @@ class Pagination
     }
 
      /**
-     * Get Items Per Page
+     * Get các mục trên mỗi trang
      *
      * @return int
      */
@@ -103,7 +103,7 @@ class Pagination
     }
 
      /**
-     * Get Last Page
+     * Get Trang cuối
      *
      * @return int
      */
@@ -159,8 +159,7 @@ class Pagination
     }
 
      /**
-     * Start Pagination
-     *
+     * bắt đầu Phân trang
      * @return $this
      */
     public function paginate()

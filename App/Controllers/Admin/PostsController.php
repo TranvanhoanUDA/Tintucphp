@@ -7,7 +7,7 @@ use System\Controller;
 class PostsController extends Controller
 {
     /**
-    * Display Posts  List
+    * Hiện danh sách bài viết
     *
     * @return mixed
     */
@@ -25,7 +25,7 @@ class PostsController extends Controller
     }
 
     /**
-    * Open Posts  Form
+    * mở form bài viết
     *
     * @return string
     */
@@ -35,7 +35,7 @@ class PostsController extends Controller
     }
 
     /**
-    * Submit for creating new post
+    * gửi để tạo bài viết
     *
     * @return string | json
     */
@@ -44,14 +44,14 @@ class PostsController extends Controller
         $json = [];
 
         if ($this->isValid()) {
-            // it means there are no errors in form validation
+            // không lỗi thì xác thực
             $this->load->model('Posts')->create();
 
             $json['success'] = 'Post Has Been Created Successfully';
 
             $json['redirectTo'] = $this->url->link('/admin/posts');
         } else {
-            // it means there are errors in form validation
+            // ngược lại thì in ra lỗi
             $json['errors'] = $this->validator->flattenMessages();
         }
 
@@ -59,7 +59,7 @@ class PostsController extends Controller
     }
 
      /**
-     * Display Edit Form
+     * sửa
      *
      * @param int $id
      * @return string
@@ -78,14 +78,14 @@ class PostsController extends Controller
     }
 
      /**
-     * Display Form
+     * hiện form
      *
      * @param \stdClass $post
      */
     private function form($post = null)
     {
         if ($post) {
-            // editing form
+            //sửa
             $data['target'] = 'edit-post-' . $post->id;
 
             $data['action'] = $this->url->link('/admin/posts/save/' . $post->id);
@@ -112,13 +112,13 @@ class PostsController extends Controller
         $data['image'] = '';
         $data['related_posts'] = [];
 
-        if ($post['related_posts']) { // change this condition
+        if ($post['related_posts']) { // thay đổi điều kiện
             // to if (! empty($post['related_posts'])
             $data['related_posts'] = explode(',', $post['related_posts']);
         }
 
         if (! empty($post['image'])) {
-            // default path to upload post image : public/images
+            // đường dẫn mặc định để tải lên hình ảnh bài đăng: public / images
             $data['image'] = $this->url->link('public/images/' . $post['image']);
         }
 
@@ -130,7 +130,7 @@ class PostsController extends Controller
     }
 
     /**
-    * Submit for creating new post
+    * Submit để tạo bài viết mới
     *
     * @return string | json
     */
@@ -139,14 +139,12 @@ class PostsController extends Controller
         $json = [];
 
         if ($this->isValid($id)) {
-            // it means there are no errors in form validation
             $this->load->model('Posts')->update($id);
 
             $json['success'] = 'Posts  Has Been Updated Successfully';
 
             $json['redirectTo'] = $this->url->link('/admin/posts');
         } else {
-            // it means there are errors in form validation
             $json['errors'] = $this->validator->flattenMessages();
         }
 
@@ -154,7 +152,7 @@ class PostsController extends Controller
     }
 
      /**
-     * Delete Record
+     * xóa
      *
      * @param int $id
      * @return mixed
@@ -175,7 +173,7 @@ class PostsController extends Controller
     }
 
      /**
-     * Validate the form
+     * Xác thực
      *
      * @param int $id
      * @return bool
